@@ -37,7 +37,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
       $emp=new Employees();
-      $emp->emp_no=$request->emp_number;
+        $emp->emp_no=$request->emp_number;
         $emp->emp_fname=$request->fname;
         $emp->emp_mname=$request->mname;
         $emp->emp_lname=$request->lname;
@@ -52,7 +52,7 @@ class EmployeeController extends Controller
         $emp->county=$request->county;
         $emp->status=$request->status;
         if($emp->save()){
-            return redirect("employees");
+            return redirect("employees")->with('message','Member successfully added');
         }
         else{
             return redirect("employees");

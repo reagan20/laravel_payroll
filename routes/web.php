@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
+    return view('auth/login');
+});
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
-//Route::get('/employees', function () {
-//    return view('employees');
+//Route::get('/allowances', function () {
+//    return view('allowances');
 //});
 //Route::get('/user-profile', function () {
 //    return view('user_profile');
@@ -24,6 +27,8 @@ Route::get('/', function () {
 Route::resource('employees','EmployeeController');
 Route::resource('new_employee','EmployeeController');
 Route::resource('show_profile','EmployeeController');
+Route::resource('allowance','AllowanceController');
+Route::resource('add_allowance','AllowanceController');
 
 Auth::routes();
 

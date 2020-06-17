@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Allowance;
 use Illuminate\Http\Request;
 
-class DepartmentController extends Controller
+class AllowanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $allowance= Allowance::all();
+        return view('allowances',compact('allowance'));//if in case inside a folder eg test   test.allowances
     }
 
     /**
@@ -34,7 +36,18 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $all=new Allowance();
+        $all->name=$request->name;
+        $all->amount=$request->allow_amount;
+        $all->description=$request->description;
+        if($all->save()){
+            return redirect('allowance')->with('message','Allowance successfully added');
+        }
+        else{
+            return redirect('allowance')->with('message','Data not saved, Please try agail later');
+        }
+        //Allowance::create($request->all());
+
     }
 
     /**
@@ -43,7 +56,7 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }

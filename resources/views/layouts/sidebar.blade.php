@@ -40,7 +40,7 @@
 
         <ul class="nav nav-list">
             <li class="active">
-                <a href="{{url('/')}}">
+                <a href="{{url('/dashboard')}}">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard </span>
                 </a>
@@ -51,6 +51,14 @@
                 <a href="{{url('employees')}}">
                     <i class="menu-icon fa fa-users"></i>
                     <span class="menu-text"> Employees </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+            <li class="">
+                <a href="{{url('allowance')}}">
+                    <i class="menu-icon fa fa-money"></i>
+                    <span class="menu-text"> Allowances </span>
                 </a>
 
                 <b class="arrow"></b>
